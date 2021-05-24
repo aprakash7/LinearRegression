@@ -1,0 +1,4 @@
+I have written a program in Python that can predict the goal difference required for a team to finish in a certain position based on data from the last 24 years of EPL Football
+I used the concept of Regression analysis linear regression to predict and build the model of English Premier league (football)
+Goal difference is the difference between Goals scored and goals conceded by a team, in a match. 
+Though the column doesn't exist I added it myself into the dataset
