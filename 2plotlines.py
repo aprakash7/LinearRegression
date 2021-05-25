@@ -50,12 +50,12 @@ x3 = df.Pts.values.reshape(-1,1)
 
 fig, ax = plt.subplots(figsize = (10,10))
 plt.scatter(x,y, color = 'blue', label = 'Points')
-plt.scatter(x3,y3, color = 'orange', label = 'FinalPoints Of 2009/10')
+plt.scatter(x3,y3, color = 'orange', label = 'Actual Points Of 2009/10')
 #plt.scatter(avg_x,avg_y, color = '#5CBFEB', label = 'Average Points of the position')
 
 
 plt.plot(x,y_predicted, color = 'red', label = 'Regression Line (Predicted)')
-plt.plot(x3,y3, color = 'black', label = 'Final Result of 2009/10')
+plt.plot(x3,y3, color = 'black', label = 'Actual Result of 2009/10')
 plt.plot([df['Pts'].mean(), df['Pts'].mean()], [1,20], 'k-', linestyle = ':', lw=1, color = '#EF0107', label = 'Mean')
 #Add this line to show that Linear Regression is better than just taking average
 
@@ -67,16 +67,29 @@ plt.yticks([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20])
 plt.gca().invert_yaxis()#rewrite because it should be from low to high
 plt.xlabel('Points')
 plt.ylabel('League Position (Rank)')
-plt.title('Evaluating relationship between Points and league position')
+plt.title('Evaluating relationship between Points and league position (EPL)')
 
-plt.text(8, 4, "Model based on Points from 2003/04 -09/10", color = '#53162f', size = '12')
-plt.text(8, 4.7, f'Slope: {slope}', color = 'red', size= '10')
-plt.text(8, 5.4, f'Intercept: {intercept}', color = 'red', size= '10')
-plt.text(8, 6.1, f'r_sqrt (Accuracy): {r_sqrt}', color = 'red', size= '10')
-plt.text(82, 20, "Akshay Prakash", color = '#5CBFEB', size = '12')
+plt.text(8, 4.4, "Model based on Points from 2003/04 -08/09", color = '#53162f', size = '11')
+plt.text(8, 5.1, f'Slope: {slope}', color = 'red', size= '10')
+plt.text(8, 5.7, f'Intercept: {intercept}', color = 'red', size= '10')
+plt.text(8, 6.4, f'r_sqrt (Accuracy): {r_sqrt}', color = 'red', size= '10')
+
+
+plt.text(80, 20, "Twitter: @aprakash_7", color = '#5CBFEB', size = '10')
+plt.text(80, 16, "Games Played: 38", color = 'red', size = '10')
+plt.text(80, 16.7, "Points per Win: +3", color = 'red', size = '10')
+plt.text(80, 17.4, "Points per Draw: +1", color = 'red', size = '10')
+plt.text(80, 18.1, "Points per Loss: 0", color = 'red', size = '10')
+plt.text(84, 18.8, "Stats via fbref", fontname= 'Franklin Gothic Medium', color = 'black', size = '13')
+#'Impact' 
+
+
+
+
+
 
 plt.text(88, 1.4, "Chelsea 04/05 (95)", color ='red', size = '7')
-plt.text(7, 19.6, "Derby County 08/09 (11) ", color = 'red', size= '7')
+plt.text(7, 19.4, "Derby County 08/09 (11) ", color = 'red', size= '7')
 
 annotations = df['Pts'].to_list()
 annotations = tuple(annotations)
